@@ -19,7 +19,7 @@ export class ProductService {
             duration: 3000,
             horizontalPosition: "right",
             verticalPosition: "top"
-        });
+    });
     }
 
     create(product: Product): Observable<Product> {
