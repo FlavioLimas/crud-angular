@@ -10,26 +10,15 @@ import { Product } from '../product.model';
 })
 export class ProductReadComponent implements OnInit {
 
-  product: Product = {
-    name: '',
-    price: .0
-  }
+  products: Product[] = [];
 
   constructor(private productService: ProductService,
     private router: Router) { }
 
   ngOnInit(): void {
-
-  }
-
-  createProduct(): void {
-    this.productService.create(this.product).subscribe(() => {
-      this.productService.showMessage('Produto criado!');
-      this.router.navigate(['/products']);
-    });
-  }
-
-  cancel(id: number): void {
-    this.router.navigate(['/products']);
+    this.productService.getAll().subscribe(products => {
+      this.products = products;
+      console.log(products);
+    })
   }
 }
