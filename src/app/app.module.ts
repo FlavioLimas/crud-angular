@@ -15,6 +15,7 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { ProductCreateComponent } from './components/template/product/product-create/product-create.component';
+import { ProductReadComponent } from './components/template/product/product-read/product-read.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -31,7 +32,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HomeComponent,
     ProductCrudComponent,
     ProductCreateComponent,
-    FooterComponent
+    FooterComponent,
+    ProductReadComponent
   ],
   imports: [
     BrowserModule,
