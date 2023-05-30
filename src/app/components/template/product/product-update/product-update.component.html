@@ -9,7 +9,9 @@
         </mat-form-field>
     </form>
     <div align="end">
-        <button mat-raised-button (click)="createProduct()" color="primary" mat-hint="end">Criar</button>
-        <button mat-raised-button (click)="cancel(1)">Excluir</button>
+        <button mat-raised-button (click)="createProduct()" 
+        color="primary" mat-hint="end">Criar</button>
+        <button mat-raised-button color="warn"
+        routerLink="/products">Cancelar</button>
     </div>
 </mat-card>
