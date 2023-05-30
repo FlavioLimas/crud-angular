@@ -1,3 +1,7 @@
-<button mat-raised-button (click)="navigateToProdictCreate()" color="primary">Novo Produto</button>
-
+<div align="end">
+    <button mat-fab matTooltip="Novo" color="primary" aria-label="Novo registro"
+     (click)="navigateToProdictCreate()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
 <app-product-read></app-product-read>
