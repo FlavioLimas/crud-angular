@@ -29,9 +29,14 @@ export class ProductService {
     getAll(): Observable<Product[]> {
         return this.http.get<Product[]>(this.baseUrl);
     }
-    
+
     findById(id: string): Observable<Product> {
         const url = `${this.baseUrl}/${id}`;
         return this.http.get<Product>(url);
+    }
+
+    update(product: Product): Observable<Product> {
+        const url = `${this.baseUrl}/update/${product.id}`
+        return this.http.put<Product>(url, product);
     }
 }
