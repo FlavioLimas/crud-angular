@@ -12,7 +12,8 @@
     </form>
     <div align="end">
         <button mat-raised-button (click)="createProduct()" 
-        color="primary" mat-hint="end">Salvar</button>
-        <button mat-raised-button routerLink="/products" color="warn">Cancelar</button>
+        color="primary" matTooltip="Salvar" mat-hint="end">Salvar</button>
+        <button mat-raised-button routerLink="/products" color="warn"
+        matTooltip="Cancelar">Cancelar</button>
     </div>
 </mat-card>
