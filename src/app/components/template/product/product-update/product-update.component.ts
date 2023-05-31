@@ -20,21 +20,15 @@ export class ProductUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    this.productService.findById(id).subscribe(product => {
+    this.productService.findById(id).subscribe((product) => {
       this.product = product;
-    });
-  }
-
-  createProduct(): void {
-    this.productService.create(this.product).subscribe(() => {
-      this.productService.showMessage('Produto criado!');
-      this.router.navigate(['/products']);
     });
   }
 
   updateProduct(): void {
     this.productService.update(this.product).subscribe(() => {
       this.productService.showMessage('Produto Atualizado!');
+      this.router.navigate(['/products']);
     });
   }
 }
