@@ -2,7 +2,6 @@ import { Product } from './../product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Component, OnInit } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-update',
@@ -22,9 +21,6 @@ export class ProductUpdateComponent implements OnInit {
     ngOnInit(): void {
       const id = this.route.snapshot.params['id'];
       this.productService.findById(id).subscribe((product) => {
-
-        let currencyPipe: CurrencyPipe = new CurrencyPipe('pt-BR');
-        currencyPipe.transform(product.price, 'BRL', true);
         this.product = product;
       });
     }

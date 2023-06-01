@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
-import { registerLocaleData, CurrencyPipe } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -69,9 +69,7 @@ registerLocaleData(localePt);
   providers: [{
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-  },
-  CurrencyPipe
-  ],
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
