@@ -38,7 +38,7 @@
                     edit
                 </i>
             </a>
-            <a routerLink="/products/delete/{{ row.id }}" class="delete">
+            <a (click)="deletById(row.id)" class="delete">
                 <i class="material-icons" matTooltip="Deletar">
                     delete
                 </i>
