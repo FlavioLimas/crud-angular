@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
 export class HeaderService {
 
     private _headerData = new BehaviorSubject<HeaderData>({
-        title:'Inínio',
+        title:'Teste',
         icon: 'home',
         routeUrl: ''
     })
@@ -22,5 +22,5 @@ export class HeaderService {
     set headerData(headerData: HeaderData) {
         this._headerData.next(headerData);
     }
-    
+
 }
