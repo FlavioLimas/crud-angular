@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
 export class HeaderService {
 
     private _headerData = new BehaviorSubject<HeaderData>({
-        title:'Teste',
+        title:'Home',
         icon: 'home',
         routeUrl: ''
     })
