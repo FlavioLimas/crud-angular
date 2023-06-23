@@ -26,14 +26,14 @@ export class ProductService {
     create(product: Product): Observable<Product> {
         return this.http.post<Product>(this.baseUrl, product).pipe(
             map(obj => obj),
-            catchError(e => this.errorHandler(e))
+            catchError(e => this._errorHandler(e))
         );
     }
 
     getAll(): Observable<Product[]> {
         return this.http.get<Product[]>(this.baseUrl).pipe(
             map(obj => obj),
-            catchError(e => this.errorHandler(e))
+            catchError(e => this._errorHandler(e))
         );
     }
     
@@ -41,7 +41,7 @@ export class ProductService {
         const url = `${this.baseUrl}/${id}`;
         return this.http.get<Product>(url).pipe(
             map(obj => obj),
-            catchError(e => this.errorHandler(e))
+            catchError(e => this._errorHandler(e))
         );
     }
     
@@ -49,7 +49,7 @@ export class ProductService {
         const url = `${this.baseUrl}/${product.id}`
         return this.http.put<Product>(url, product).pipe(
             map(obj => obj),
-            catchError(e => this.errorHandler(e))
+            catchError(e => this._errorHandler(e))
         );
     }
     
@@ -57,11 +57,11 @@ export class ProductService {
         const url = `${this.baseUrl}/${id}`
         return this.http.delete<Product>(url).pipe(
             map(obj => obj),
-            catchError(e => this.errorHandler(e))
+            catchError(e => this._errorHandler(e))
         );
     }
 
-    private errorHandler(e: any): Observable<any> {
+    private _errorHandler(e: any): Observable<any> {
         console.log(e);
         this.showMessage('Ocorreu um erro!', true);
         return EMPTY;
